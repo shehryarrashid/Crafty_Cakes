@@ -2,6 +2,7 @@ package Assignment.GUI.Controller;
 
 import Assignment.Class.Employee;
 import Assignment.Database.DBCommands;
+import Assignment.Loggs.MyLogger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -42,6 +43,7 @@ public class EmployeeDataScreenController {
 
         }catch (Exception e){
             uiUtils.showAlert(Alert.AlertType.ERROR,"ERROR LOADING PAGE",true);
+            MyLogger.log("ERROR LOADING EMPLOYEE DATA PAGE");
 
         }
     }
@@ -59,22 +61,9 @@ public class EmployeeDataScreenController {
         }
     }
 
-    public boolean nameChecks(String name){
-
-        if(name.isBlank() || name.isEmpty()){
-            return false;
-        }
-        for (int i = 0 ; i < name.length(); i++){
-            if (Character.isDigit(name.charAt(i))){
-                    return false;
-            }
-        }
-        return true;
-    }
-    
     public void handleNameEnter(){
         String newName = this.txtName.getText();
-        if(nameChecks(newName)){
+        if(uiUtils.nameChecks(newName)){
             this.lblName.setText(newName);
         }
         else{
@@ -102,18 +91,18 @@ public class EmployeeDataScreenController {
     }
 
     public void handleBackButton(ActionEvent event){
-        SearchScreenController ssc = new SearchScreenController();
-        ssc.showSearchScene();
-        this.stage.close();
+        this.uiUtils.showSearchScreen(this.stage);
     }
 
     public void handleConfirmChanges(){
         DBCommands dbCommands = new DBCommands();
         System.out.println(dbCommands.setNameDB(this.employee.getId(),this.lblName.getText()));
         System.out.println(dbCommands.setCakesCoveredDB(this.employee.getId(),Integer.parseInt(this.lblCakes.getText())));
-        this.stage.close();
-        WelcomeScreenController welcomeScreenController = new WelcomeScreenController();
-        welcomeScreenController.showWelcomeScene();
+        this.uiUtils.showWelcomeScreen(this.stage);
+    }
+
+    public void logApplicationClose(){
+        this.uiUtils.logApplicationClose();
     }
 
     @FXML

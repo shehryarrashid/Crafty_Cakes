@@ -6,4 +6,5 @@ public enum Role {
     INTERN,
     MANAGER,
     SOFTWARE_ENGINEER
+
 }

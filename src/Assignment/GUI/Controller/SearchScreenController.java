@@ -2,6 +2,7 @@ package Assignment.GUI.Controller;
 
 import Assignment.Class.Employee;
 import Assignment.Class.Team;
+import Assignment.Loggs.MyLogger;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -78,6 +79,7 @@ public class SearchScreenController {
         else{
             EmployeeDataScreenController dataScreen = new EmployeeDataScreenController(employee);
             dataScreen.showEmployeeDataScene();
+            MyLogger.log("SELECTED " + employee.getName().toUpperCase() + " TO EDIT");
             this.stage.close();
         }
 
@@ -96,20 +98,8 @@ public class SearchScreenController {
         return FXCollections.observableArrayList(arrayList);
     }
 
-    public boolean nameChecks(String name){
-
-        if(name.isBlank() || name.isEmpty()){
-            return false;
-        }
-        for (int i = 0 ; i < name.length(); i++){
-            if (!Character.isLetter(name.charAt(i))){
-                return false;
-            }
-        }
-        return true;
-    }
     public void handleSearch(ActionEvent event){
-        if (txtSearch.getText() == null || !nameChecks(txtSearch.getText())){
+        if (txtSearch.getText() == null || !uiUtils.nameChecks(txtSearch.getText())){
             uiUtils.showAlert(Alert.AlertType.INFORMATION,"INVALID CHARACTERS IN NAME",false);
 
         }else {
@@ -143,7 +133,11 @@ public class SearchScreenController {
         this.tblEmployees.getColumns().addAll(colName,colCakes,colWage,colRole);
 
     }
-    
+
+    public void logApplicationClose(){
+        this.uiUtils.logApplicationClose();
+    }
+
     @FXML
     public void initialize() throws IOException {
         createColumns();

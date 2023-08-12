@@ -54,7 +54,7 @@ public class WelcomeScreenController {
 
         }catch (Exception e){
             uiUtils.showAlert(Alert.AlertType.ERROR,"ERROR LOADING PAGE",true);
-
+            MyLogger.log("ERROR OPENING WELCOME SCREEN");
         }
     }
 
@@ -76,13 +76,17 @@ public class WelcomeScreenController {
 
     }
 
+    public void handleAddNewEmployee(){
+        this.uiUtils.showNewEmployeeScreen(this.stage);
+    }
+
     public void handleQuit(ActionEvent event){
         this.stage.close();
-        try{
-            MyLogger.log("Application Closed");
-        }catch (Exception e){
-            uiUtils.showAlert(Alert.AlertType.INFORMATION,"closed",true);
-        }
+        MyLogger.log("Application Closed");
+    }
+
+    public void logApplicationClose(){
+        this.uiUtils.logApplicationClose();
     }
 
 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" layoutX="253.0" layoutY="22.0" prefHeight="77.0" prefWidth="344.0" text="Create New Employee">
+         <font>
+            <Font name="Arial Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="149.0" layoutY="179.0" prefHeight="41.0" prefWidth="177.0" text="Enter Employee Name:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="149.0" layoutY="244.0" prefHeight="41.0" prefWidth="177.0" text="Enter Type:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="149.0" layoutY="309.0" prefHeight="41.0" prefWidth="177.0" text="Initial Cakes Covered:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="373.0" layoutY="439.0" mnemonicParsing="false" text="Create Employee" onAction="#handleCreateButton">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <SplitMenuButton fx:id="smbType" alignment="CENTER" layoutX="360.0" layoutY="250.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="177.0" text="REGULAR">
+        <items>
+          <MenuItem fx:id="qualityController" mnemonicParsing="false" text="QUALITY_CONTROLLER" onAction="#handleQualityController"/>
+        </items>
+      </SplitMenuButton>
+      <TextField fx:id="cakesCovered" layoutX="360.0" layoutY="315.0" prefHeight="29.0" prefWidth="177.0" promptText="Optional" />
+      <TextField fx:id="empName" layoutX="360.0" layoutY="185.0" prefHeight="29.0" prefWidth="177.0" />
+   </children>
+</AnchorPane>

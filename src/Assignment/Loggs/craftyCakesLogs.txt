@@ -3,3 +3,14 @@
 2023-08-11 20:35:24 - Application Started
 2023-08-11 20:35:26 - Application Closed
 2023-08-11 22:17:59 - Application Started
+2023-08-12 18:08:46 - Application Started
+2023-08-12 19:28:43 - Application Started
+2023-08-12 19:28:59 - APPLICATION CLOSED
+2023-08-12 19:30:08 - Application Started
+2023-08-12 20:17:42 - Application Started
+2023-08-12 20:28:03 - Application Started
+2023-08-12 20:28:18 - New Employee Added
+2023-08-12 20:30:03 - Application Started
+2023-08-12 20:30:13 - New Employee Added
+2023-08-12 20:30:30 - New Employee Added
+2023-08-12 20:30:54 - Application Closed

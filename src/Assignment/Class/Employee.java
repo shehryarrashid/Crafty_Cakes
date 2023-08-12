@@ -17,7 +17,6 @@ public class Employee implements Comparable<Employee>{
         this.name = name;
         this.cakesCovered = 0;
         this.id = dbUpdate.getNextID();
-        dbUpdate.insertEmployee(this);
     }
 
     public Employee(String name, int cakesCovered)throws Exception{
@@ -27,7 +26,6 @@ public class Employee implements Comparable<Employee>{
         }
         this.cakesCovered = cakesCovered;
         this.id = dbUpdate.getNextID();
-        dbUpdate.insertEmployee(this);
     }
 
     // ----- USE FOR DATABASE SELECTS ONLY ----- //

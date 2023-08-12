@@ -2,6 +2,7 @@ package Assignment.GUI.Controller;
 
 import Assignment.Class.Employee;
 import Assignment.Class.Team;
+import Assignment.Loggs.MyLogger;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -38,25 +39,12 @@ public class AllEmployeesScreenController {
 
         }catch (Exception e){
             uiUtils.showAlert(Alert.AlertType.INFORMATION,"COULDN'T LOAD TEAM",true);
+            MyLogger.log("COULDN'T LOAD TEAM");
         }
     }
 
     // ----- DISPLAY SCREEN METHODS -----  //
 
-    public void showEmployeeTable(Stage stage){
-
-        try{
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/AllEmployeesScreen.fxml"));
-            loader.setController(this);
-            stage.setScene(new Scene(loader.load()));
-
-
-        }catch (Exception e){
-            uiUtils.showAlert(Alert.AlertType.ERROR,"ERROR LOADING PAGE",true);
-        }
-
-    }
 
     public void showEmployeeTable(){
         try{
@@ -70,6 +58,7 @@ public class AllEmployeesScreenController {
 
         }catch (Exception e){
             uiUtils.showAlert(Alert.AlertType.ERROR,"ERROR LOADING PAGE",true);
+            MyLogger.log("ERROR LOADING EMPLOYEES TABLE");
         }
 
     }
@@ -79,9 +68,7 @@ public class AllEmployeesScreenController {
     // --- Button Handling --- //
 
     public void handleBackButton(ActionEvent event){
-        WelcomeScreenController welcome = new WelcomeScreenController();
-        welcome.showWelcomeScene();
-        this.stage.close();
+        this.uiUtils.showWelcomeScreen(this.stage);
     }
 
     // --- Table Defining ---//
@@ -117,6 +104,10 @@ public class AllEmployeesScreenController {
         this.lblSummary.setText(this.team.summary());
     }
 
+
+    public void logApplicationClose(){
+        this.uiUtils.logApplicationClose();
+    }
 
     // ----- Loads the Scene ----- //
     @FXML

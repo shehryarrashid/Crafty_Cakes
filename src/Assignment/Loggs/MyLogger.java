@@ -2,13 +2,12 @@ package Assignment.Loggs;
 
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class MyLogger {
 
-        public static void log(String message) throws IOException {
+        public static void log(String message){
             try{
                 File file = new File("./src/Assignment/Loggs/craftyCakesLogs.txt");
                 FileWriter fileWriter = new FileWriter(file,true);

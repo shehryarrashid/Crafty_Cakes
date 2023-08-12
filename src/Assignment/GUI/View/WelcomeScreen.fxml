@@ -1,29 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <Button id="btnShowEmployees" alignment="CENTER" layoutX="204.0" layoutY="158.0" mnemonicParsing="false" onAction="#handleShowEmployees" prefHeight="26.0" prefWidth="165.0" text="Show Employees" />
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <Button id="btnShowEmployees" alignment="CENTER" layoutX="204.0" layoutY="171.0" mnemonicParsing="false" onAction="#handleShowEmployees" prefHeight="26.0" prefWidth="165.0" text="Show Employees" />
    <Label alignment="CENTER" layoutX="209.0" layoutY="55.0" prefHeight="37.0" prefWidth="486.0" text="Crafty Cakes Management System" textAlignment="CENTER">
       <font>
          <Font name="Arial Bold" size="28.0" />
       </font>
    </Label>
-   <Button layoutX="534.0" layoutY="158.0" mnemonicParsing="false" onAction="#handleModifyData" prefHeight="26.0" prefWidth="165.0" text="Modify Employees Data" />
+   <Button layoutX="533.0" layoutY="171.0" mnemonicParsing="false" onAction="#handleModifyData" prefHeight="26.0" prefWidth="165.0" text="Modify Employees Data" />
    <Button layoutX="369.0" layoutY="398.0" mnemonicParsing="false" onAction="#handleQuit" prefHeight="26.0" prefWidth="165.0" text="Quit" />
-   <Button layoutX="534.0" layoutY="287.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="165.0" text="Add New Hiring" />
-   <Button layoutX="204.0" layoutY="287.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="165.0" text="Workday" />
+   <Button layoutX="368.0" layoutY="274.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="165.0" text="Add New Hiring" onAction="#handleAddNewEmployee"/>
    <ImageView fitHeight="60.0" fitWidth="62.0" layoutX="144.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@../Images/cakeIcon.png" />
       </image>
    </ImageView>
    <Separator layoutX="205.0" layoutY="225.0" prefHeight="26.0" prefWidth="494.0" />
-   <Separator layoutX="449.0" layoutY="170.0" orientation="VERTICAL" prefHeight="141.0" prefWidth="4.0" />
 </AnchorPane>
