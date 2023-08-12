@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="tblTeam" layoutX="105.0" layoutY="97.0" prefHeight="340.0" prefWidth="690.0">
+      </TableView>
+      <Label fx:id="lbltitle" alignment="CENTER" layoutX="288.0" layoutY="22.0" prefHeight="37.0" prefWidth="324.0" text="List of Employees">
+         <font>
+            <Font name="System Bold Italic" size="23.0" />
+         </font></Label>
+      <Button id="back" layoutX="14.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="26.0" prefWidth="103.0" text="Back" />
+      <Label fx:id="lblSummary" alignment="CENTER" layoutX="105.0" layoutY="464.0" prefHeight="94.0" prefWidth="690.0" textAlignment="CENTER" />
+   </children>
+</AnchorPane>

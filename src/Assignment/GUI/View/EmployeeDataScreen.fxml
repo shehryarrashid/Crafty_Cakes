@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="lblName" alignment="CENTER" layoutX="65.0" layoutY="126.0" prefHeight="26.0" prefWidth="160.0" text="Actual Name">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="lblCakes" alignment="CENTER" layoutX="65.0" layoutY="225.0" prefHeight="26.0" prefWidth="160.0" text="Actual Cakes">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Button layoutX="351.0" layoutY="388.0" mnemonicParsing="false" onAction="#handleConfirmChanges" prefHeight="26.0" prefWidth="199.0" text="Confirm Changes">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <TextField fx:id="txtName" layoutX="370.0" layoutY="126.0" promptText="New Name">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Button layoutX="252.0" layoutY="225.0" mnemonicParsing="false" onAction="#handePlusButton" prefHeight="35.0" prefWidth="44.0" text="+">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button layoutX="296.0" layoutY="225.0" mnemonicParsing="false" onAction="#handeMinusButton" prefHeight="35.0" prefWidth="44.0" text="-">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Label fx:id="lblTitle" alignment="CENTER" layoutY="20.0" prefHeight="48.0" prefWidth="900.0" text="Employee Name">
+         <font>
+            <Font name="Arial Bold" size="25.0" />
+         </font>
+      </Label>
+      <Button id="btnBack" layoutX="27.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="35.0" prefWidth="93.0" text="Back" />
+      <TextField fx:id="txtCakes" layoutX="370.0" layoutY="225.0" promptText="Enter Cakes Manually">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Button id="btnCakesEnter" layoutX="608.0" layoutY="225.0" mnemonicParsing="false" onAction="#handleCakesEnter" prefHeight="35.0" prefWidth="108.0" text="Enter">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button id="btnNameEnter" layoutX="608.0" layoutY="126.0" mnemonicParsing="false" onAction="#handleNameEnter" prefHeight="35.0" prefWidth="108.0" text="Enter">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+   </children>
+</AnchorPane>
