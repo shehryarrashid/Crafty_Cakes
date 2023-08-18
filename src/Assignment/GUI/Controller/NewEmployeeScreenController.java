@@ -4,6 +4,7 @@ import Assignment.Class.Employee;
 import Assignment.Database.DBCommands;
 import Assignment.Loggs.MyLogger;
 import Assignment.Role;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,6 +12,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.util.Objects;
 
 public class NewEmployeeScreenController {
     private Stage stage;
@@ -53,11 +56,20 @@ public class NewEmployeeScreenController {
     }
 
 
-    public void handleCreateButton(){
+    private boolean allChecks(){
         String name = this.empName.getText();
         int cakes = uiUtils.cakesCheck(this.cakesCovered.getText());
-        if(uiUtils.nameChecks(name) && cakes != -1){
-            Employee employee = uiUtils.employeeCreator(name,cakes,this.smbType.getText());
+        String role = this.smbType.getText();
+        return uiUtils.nameChecks(name) && cakes != -1 && !Objects.equals(role, "TYPE");
+    }
+
+    public void handleBackButton(ActionEvent event){
+        this.uiUtils.showWelcomeScreen(this.stage);
+    }
+
+    public void handleCreateButton(){
+        if(allChecks()){
+            Employee employee = uiUtils.employeeCreator(this.empName.getText(),uiUtils.cakesCheck(this.cakesCovered.getText()),this.smbType.getText());
             dbCommands.insertEmployee(employee);
             this.uiUtils.showAlert(Alert.AlertType.INFORMATION,"Employee Successfully Added",true);
             MyLogger.log("New Employee Added");
@@ -65,7 +77,6 @@ public class NewEmployeeScreenController {
         }
         else{
             this.uiUtils.showAlert(Alert.AlertType.ERROR,"FAILED : INVALID DATA ENTERED",true);
-            this.uiUtils.showWelcomeScreen(this.stage);
         }
     }
 

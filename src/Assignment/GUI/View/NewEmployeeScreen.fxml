@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitMenuButton?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label alignment="CENTER" layoutX="253.0" layoutY="22.0" prefHeight="77.0" prefWidth="344.0" text="Create New Employee">
          <font>
@@ -30,17 +26,20 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="373.0" layoutY="439.0" mnemonicParsing="false" text="Create Employee" onAction="#handleCreateButton">
+      <Button layoutX="373.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleCreateButton" text="Create Employee">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <SplitMenuButton fx:id="smbType" alignment="CENTER" layoutX="360.0" layoutY="250.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="177.0" text="REGULAR">
+      <SplitMenuButton fx:id="smbType" alignment="CENTER" layoutX="360.0" layoutY="250.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="238.0" text="TYPE">
         <items>
-          <MenuItem fx:id="qualityController" mnemonicParsing="false" text="QUALITY_CONTROLLER" onAction="#handleQualityController"/>
+          <MenuItem fx:id="regular" mnemonicParsing="false" onAction="#handleRegular" text="REGULAR" />
+          <MenuItem fx:id="qualityController" mnemonicParsing="false" onAction="#handleQualityController" text="QUALITY_CONTROLLER" />
+
         </items>
       </SplitMenuButton>
-      <TextField fx:id="cakesCovered" layoutX="360.0" layoutY="315.0" prefHeight="29.0" prefWidth="177.0" promptText="Optional" />
-      <TextField fx:id="empName" layoutX="360.0" layoutY="185.0" prefHeight="29.0" prefWidth="177.0" />
+      <TextField fx:id="cakesCovered" layoutX="360.0" layoutY="315.0" prefHeight="29.0" prefWidth="238.0" promptText="Optional" />
+      <TextField fx:id="empName" layoutX="360.0" layoutY="185.0" prefHeight="29.0" prefWidth="238.0" />
+      <Button layoutX="28.0" layoutY="48.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back" />
    </children>
 </AnchorPane>

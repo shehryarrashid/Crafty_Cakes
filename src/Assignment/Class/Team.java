@@ -55,6 +55,13 @@ public class Team {
                 String.format("%-15s| %87s\n", "Total Wage", util.printCurrency(values[0]));
     }
 
+    public String summaryGui(){
+        double[] values = calculateTotals();
+        return "SUMMARY\n" +
+                String.format("%-25s %80s\n", "Payable Cakes", (int) values[1]) +
+                String.format("%-25s %80s\n", "Total Wage", util.printCurrency(values[0]));
+    }
+
     public double[] calculateTotals(){
         double[] totals = {0,0};
         for (Employee employee : this.team) {

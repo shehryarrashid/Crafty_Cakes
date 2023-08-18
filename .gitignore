@@ -30,3 +30,4 @@ bin/
 
 ### MY IGNORE ##
 src/META-INF
+src/Assignment/Database/userData.java

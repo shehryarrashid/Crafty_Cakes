@@ -101,7 +101,7 @@ public class AllEmployeesScreenController {
     }
 
     public void setLabels(){
-        this.lblSummary.setText(this.team.summary());
+        this.lblSummary.setText(this.team.summaryGui());
     }
 
 
